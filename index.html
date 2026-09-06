@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Weather for 03786</title>
+	<style>
+		:root {
+			color-scheme: light;
+			font-family: Georgia, "Times New Roman", serif;
+			color: #18324b;
+			background: #eaf4f5;
+		}
+
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: flex;
+			background: linear-gradient(135deg, #eaf4f5, #d8e7f0);
+		}
+
+		aside {
+			position: fixed;
+			inset: 0 auto 0 0;
+			width: 15rem;
+			padding: 1.5rem 1rem;
+			overflow-y: auto;
+			background: #18324b;
+			box-sizing: border-box;
+		}
+
+		aside h2 {
+			margin: 0 0 1rem;
+			color: #ffffff;
+			font-size: 1.25rem;
+		}
+
+		.team-list {
+			display: grid;
+			gap: 0.25rem;
+		}
+
+		.team-list a {
+			padding: 0.45rem 0.55rem;
+			border-radius: 4px;
+			color: #d8e7f0;
+			font-family: Arial, sans-serif;
+			font-size: 0.9rem;
+			text-decoration: none;
+		}
+
+		.team-list a:hover,
+		.team-list a:focus-visible {
+			color: #18324b;
+			background: #ffffff;
+		}
+
+		main {
+			width: min(90%, 30rem);
+			max-width: 30rem;
+			margin: auto auto auto calc(15rem + (100% - 15rem - 30rem) / 2);
+			padding: 2.5rem;
+			border: 1px solid #c1d8df;
+			border-radius: 12px;
+			background: rgba(255, 255, 255, 0.85);
+			box-shadow: 0 1rem 3rem rgba(24, 50, 75, 0.12);
+			text-align: center;
+		}
+
+		h1 {
+			margin: 0 0 0.4rem;
+			font-size: clamp(2rem, 8vw, 3.5rem);
+		}
+
+		.location {
+			margin: 0 0 2rem;
+			color: #527287;
+			font-size: 1.1rem;
+		}
+
+		#weather {
+			min-height: 8rem;
+		}
+
+		.temperature {
+			margin: 0;
+			font-size: 4rem;
+			line-height: 1;
+			font-weight: bold;
+		}
+
+		.condition {
+			margin: 0.8rem 0 1.5rem;
+			font-size: 1.25rem;
+		}
+
+		.details {
+			display: flex;
+			justify-content: center;
+			gap: 1.5rem;
+			color: #527287;
+		}
+
+		.error {
+			color: #a53d3d;
+		}
+
+		button {
+			margin-top: 1.5rem;
+			padding: 0.7rem 1rem;
+			border: 0;
+			border-radius: 6px;
+			color: white;
+			background: #246b82;
+			font: inherit;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background: #1b5366;
+		}
+
+		@media (max-width: 700px) {
+			body {
+				display: block;
+			}
+
+			aside {
+				position: static;
+				width: 100%;
+				padding: 1rem;
+			}
+
+			aside h2 {
+				margin-bottom: 0.6rem;
+			}
+
+			.team-list {
+				display: flex;
+				gap: 0.4rem;
+				overflow-x: auto;
+				padding-bottom: 0.35rem;
+			}
+
+			.team-list a {
+				flex: 0 0 auto;
+			}
+
+			main {
+				width: min(calc(90% - 2rem), 30rem);
+				margin: 2rem auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<aside>
+		<h2>NFL Teams</h2>
+		<nav class="team-list" aria-label="NFL teams">
+			<a href="https://www.azcardinals.com/" target="_blank" rel="noopener">Arizona Cardinals</a>
+			<a href="https://www.atlantafalcons.com/" target="_blank" rel="noopener">Atlanta Falcons</a>
+			<a href="https://www.baltimoreravens.com/" target="_blank" rel="noopener">Baltimore Ravens</a>
+			<a href="https://www.buffalobills.com/" target="_blank" rel="noopener">Buffalo Bills</a>
+			<a href="https://www.panthers.com/" target="_blank" rel="noopener">Carolina Panthers</a>
+			<a href="https://www.chicagobears.com/" target="_blank" rel="noopener">Chicago Bears</a>
+			<a href="https://www.bengals.com/" target="_blank" rel="noopener">Cincinnati Bengals</a>
+			<a href="https://www.clevelandbrowns.com/" target="_blank" rel="noopener">Cleveland Browns</a>
+			<a href="https://www.dallascowboys.com/" target="_blank" rel="noopener">Dallas Cowboys</a>
+			<a href="https://www.denverbroncos.com/" target="_blank" rel="noopener">Denver Broncos</a>
+			<a href="https://www.detroitlions.com/" target="_blank" rel="noopener">Detroit Lions</a>
+			<a href="https://www.packers.com/" target="_blank" rel="noopener">Green Bay Packers</a>
+			<a href="https://www.houstontexans.com/" target="_blank" rel="noopener">Houston Texans</a>
+			<a href="https://www.colts.com/" target="_blank" rel="noopener">Indianapolis Colts</a>
+			<a href="https://www.jaguars.com/" target="_blank" rel="noopener">Jacksonville Jaguars</a>
+			<a href="https://www.chiefs.com/" target="_blank" rel="noopener">Kansas City Chiefs</a>
+			<a href="https://www.raiders.com/" target="_blank" rel="noopener">Las Vegas Raiders</a>
+			<a href="https://www.chargers.com/" target="_blank" rel="noopener">Los Angeles Chargers</a>
+			<a href="https://www.therams.com/" target="_blank" rel="noopener">Los Angeles Rams</a>
+			<a href="https://www.miamidolphins.com/" target="_blank" rel="noopener">Miami Dolphins</a>
+			<a href="https://www.vikings.com/" target="_blank" rel="noopener">Minnesota Vikings</a>
+			<a href="https://www.patriots.com/" target="_blank" rel="noopener">New England Patriots</a>
+			<a href="https://www.neworleanssaints.com/" target="_blank" rel="noopener">New Orleans Saints</a>
+			<a href="https://www.giants.com/" target="_blank" rel="noopener">New York Giants</a>
+			<a href="https://www.newyorkjets.com/" target="_blank" rel="noopener">New York Jets</a>
+			<a href="https://www.eagles.com/" target="_blank" rel="noopener">Philadelphia Eagles</a>
+			<a href="https://www.steelers.com/" target="_blank" rel="noopener">Pittsburgh Steelers</a>
+			<a href="https://www.49ers.com/" target="_blank" rel="noopener">San Francisco 49ers</a>
+			<a href="https://www.seahawks.com/" target="_blank" rel="noopener">Seattle Seahawks</a>
+			<a href="https://www.buccaneers.com/" target="_blank" rel="noopener">Tampa Bay Buccaneers</a>
+			<a href="https://www.tennesseetitans.com/" target="_blank" rel="noopener">Tennessee Titans</a>
+			<a href="https://www.commanders.com/" target="_blank" rel="noopener">Washington Commanders</a>
+		</nav>
+	</aside>
+	<main>
+		<h1>Louis</h1>
+		<p class="location">Current weather for ZIP code 03786</p>
+		<section id="weather" aria-live="polite">Loading weather...</section>
+		<button id="retry" type="button" hidden>Try again</button>
+	</main>
+
+	<script>
+		const weatherElement = document.querySelector("#weather");
+		const retryButton = document.querySelector("#retry");
+		const zipCode = "03786";
+
+		const weatherDescriptions = {
+			0: "Clear sky",
+			1: "Mainly clear",
+			2: "Partly cloudy",
+			3: "Overcast",
+			45: "Foggy",
+			48: "Rime fog",
+			51: "Light drizzle",
+			53: "Drizzle",
+			55: "Heavy drizzle",
+			61: "Light rain",
+			63: "Rain",
+			65: "Heavy rain",
+			71: "Light snow",
+			73: "Snow",
+			75: "Heavy snow",
+			80: "Light showers",
+			81: "Showers",
+			82: "Heavy showers",
+			95: "Thunderstorm",
+			96: "Thunderstorm with hail",
+			99: "Thunderstorm with heavy hail"
+		};
+
+		async function loadWeather() {
+			weatherElement.className = "";
+			weatherElement.textContent = "Loading weather...";
+			retryButton.hidden = true;
+
+			try {
+				const locationResponse = await fetch(
+					`https://geocoding-api.open-meteo.com/v1/search?name=${zipCode}&count=1&language=en&format=json`
+				);
+				if (!locationResponse.ok) throw new Error("Location lookup failed");
+
+				const locationData = await locationResponse.json();
+				const location = locationData.results?.[0];
+				if (!location) throw new Error("ZIP code not found");
+
+				const weatherResponse = await fetch(
+					`https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&current=temperature_2m,weather_code,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`
+				);
+				if (!weatherResponse.ok) throw new Error("Weather lookup failed");
+
+				const weatherData = await weatherResponse.json();
+				const current = weatherData.current;
+				const place = [location.name, location.admin1].filter(Boolean).join(", ");
+				const updated = new Date(current.time).toLocaleTimeString([], {
+					hour: "numeric",
+					minute: "2-digit"
+				});
+
+				weatherElement.innerHTML = `
+					<p class="temperature">${Math.round(current.temperature_2m)}&deg;F</p>
+					<p class="condition">${weatherDescriptions[current.weather_code] || "Conditions unavailable"}</p>
+					<div class="details">
+						<span>Wind ${Math.round(current.wind_speed_10m)} mph</span>
+						<span>${place}</span>
+					</div>
+					<p class="location">Updated ${updated}</p>
+				`;
+			} catch (error) {
+				weatherElement.className = "error";
+				weatherElement.textContent = `Unable to load weather: ${error.message}.`;
+				retryButton.hidden = false;
+			}
+		}
+
+		retryButton.addEventListener("click", loadWeather);
+		loadWeather();
+	</script>
+</body>
+</html>
